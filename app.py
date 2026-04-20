@@ -12,12 +12,10 @@ John.buy({"title:": "Chestplate", "def": 10, "price": 12})
 print(John.__dict__) """
 
 class Pet:
-    def __init__(self, name,happiness):
+    def __init__(self, name, happiness):
         self.name = name
         self.__happiness = happiness
-    def play(self, fetch, catch):
-
-
-dog = Pet("dog", 0)
-dog.play
-print(dog.__dict__)
+    def play(self, fetch):
+        self.__happiness += 10
+    def show_status(self):
+        print(f"{self.name}")

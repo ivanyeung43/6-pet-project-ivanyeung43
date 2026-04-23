@@ -31,18 +31,22 @@ Ruffs.show_status() """
 # Pet Project
 
 class Pet:
-    action_taken = input("What would you like to do?")
-    def __init__(self, name, happiness, health, action, hunger):
+    def __init__(self, name, happiness, health, hunger, action):
         self.name = name
         self.__happiness = happiness
         self.__health = health
+        self.__hunger = hunger
         self.action = action
-        self.hunger = hunger
     def play(self, action):
         self.__happiness += 10
         self.action = action
+    def feed(self):
+        self.__hunger += 5
     def care(self, action):
-        
+        self.__health += 5
+        self.action = action
+    def show_status(self):
+        print(f"{self.name} has {self.__happiness} happiness, {self.__health} health points, and {self.__hunger} points")
 
-        
-        
+Ruffs = Pet("Ruffs, 1, 10, 5, ")
+Ruffs.play("fetch")

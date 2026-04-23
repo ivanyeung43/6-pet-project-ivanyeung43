@@ -31,14 +31,18 @@ Ruffs.show_status() """
 # Pet Project
 
 class Pet:
+    action_taken = input("What would you like to do?")
     def __init__(self, name, happiness, health, action, hunger):
         self.name = name
         self.__happiness = happiness
         self.__health = health
         self.action = action
         self.hunger = hunger
-    def Naming(self, name):
-        self.name = input(name)
-        print(input("What would you like to name the pet"))
+    def play(self, action):
+        self.__happiness += 10
+        self.action = action
+    def care(self, action):
+        
 
-"" = Pet
+        
+        

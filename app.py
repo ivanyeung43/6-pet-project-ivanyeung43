@@ -29,7 +29,7 @@ Ruffs.play(" fetch.")
 Ruffs.show_status() """
 
 # Pet Project
-action_taken = input("What would you like to do? 1.Feed 2.Care 3.Play(Input a number)")
+
 class Pet:
     def __init__(self, name, happiness, health, hunger, action):
         self.name = name
@@ -53,11 +53,24 @@ class Pet:
     def show_status(self):
         print(f"{self.name} has {self.__happiness} happiness, {self.__health} health points, and {self.__hunger} points")
 
-Ruffs = Pet("Ruffs", 5, 5, 10, "")
-if action_taken == 3:
-    Ruffs.play(" fetch.")
-if action_taken == 2:
-    Ruffs.care( "Bath")
-if action_taken == 1:
-    Ruffs.feed (" dog food.")
+
+def play(pet_name):
+    end_game = ""
+
+    pet_name = Pet(pet_name, 5, 5, 10, "")
+    while end_game.lower != "5":
+        action_taken = input("What would you like to do? Press 1 to feed, Press 2 to care, Press 3 to play and Press 4 to show status(Type 5 to stop the game)")
+        if action_taken.lower == "end":
+            pet_name.show_status()
+            break
+        elif int(action_taken) == 1:
+            pet_name.feed(" food")
+        elif int(action_taken) == 2:
+            pet_name.care(" bath")
+        elif int(action_taken) == 3:
+            pet_name.play(" fetch")
+        elif int(action_taken) == 4:
+            pet_name.show_status()
+
+play(input("What would you like to name your pet?"))
 

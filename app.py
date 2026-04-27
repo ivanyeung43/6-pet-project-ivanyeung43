@@ -55,15 +55,12 @@ class Pet:
 
 
 def play(pet_name):
-    end_game = ""
-
     pet_name = Pet(pet_name, 5, 5, 10, "")
-    while int(end_game)!= 5:
+    while int(action_taken)!= 5:
         action_taken = input("What would you like to do? Press 1 to feed, Press 2 to care, Press 3 to play and Press 4 to show status(Type 5 to stop the game)")
-        # if int(action_taken) == 5:
-        #     pet_name.show_status()
-        #     break
-        if int(action_taken) == 1:
+        if int(action_taken) == 5:
+            break
+        elif int(action_taken) == 1:
             pet_name.feed(" food")
         elif int(action_taken) == 2:
             pet_name.care(" bath")
@@ -71,6 +68,8 @@ def play(pet_name):
             pet_name.play(" fetch")
         elif int(action_taken) == 4:
             pet_name.show_status()
+    pet_name.show_status()
+    print("Game has ended.")
 
 play(input("What would you like to name your pet?"))
 
